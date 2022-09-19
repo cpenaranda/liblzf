@@ -93,7 +93,7 @@ lzf_compress_best (const void *const in_data, unsigned int in_len,
       unsigned int res = ((unsigned long)ip) & (LZF_MAX_OFF - 1);
       u16 hash = HASH (ip);
       u16 diff;
-      const u8 *b = ip < (u8 *)in_data + LZF_MAX_OFF ? in_data : ip - LZF_MAX_OFF;
+      const u8 *b = (const u8*)(ip < (u8 *)in_data + LZF_MAX_OFF ? in_data : ip - LZF_MAX_OFF);
       const u8 *p = STATE.first [hash];
       STATE.prev [res] = ip - p; /* update ptr to previous hash match */
       STATE.first [hash] = ip; /* first hash match is here */

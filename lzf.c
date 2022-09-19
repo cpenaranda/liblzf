@@ -35,7 +35,7 @@
  * either the BSD or the GPL.
  */
 
-#include "config.h"
+// #include "config.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
